@@ -1,6 +1,12 @@
 window.addEventListener('load', function() {
 	//stran nalozena
-		
+	var izvediPrijavo=function(event) {
+		var ime = document.querySelector("#uporabnisko_ime").value;
+		var element = document.getElementById("uporabnik");
+		element.innerHTML = ime;
+		document.getElementsByClassName("pokrivalo")[0].style.display = "none";
+	}
+	document.querySelector("#prijavniGumb").addEventListener('click', izvediPrijavo);
 	//Posodobi opomnike
 	var posodobiOpomnike = function() {
 		var opomniki = document.querySelectorAll(".opomnik");
