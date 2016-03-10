@@ -7,6 +7,19 @@ window.addEventListener('load', function() {
 		document.getElementsByClassName("pokrivalo")[0].style.display = "none";
 	}
 	document.querySelector("#prijavniGumb").addEventListener('click', izvediPrijavo);
+	
+	var dodajOpomnik = function() {
+		var naziv = document.querySelector("#naziv_opomnika").value;
+		var cas = document.querySelector("#cas_opomnika").value;
+		document.getElementById("naziv_opomnika").value = "";
+		document.getElementById("cas_opomnika").value = "";
+		
+		var element = document.getElementById("opomniki");
+		element.innerHTML += "<div class='opomnik'> <div class='naziv_opomnika'> " + naziv + " </div> <div class='cas_opomnika'> Opomnik čez <span>" + cas + "</span> sekund.</div> </div>"
+		
+	}
+	document.querySelector("#dodajGumb").addEventListener('click', dodajOpomnik);
+	
 	//Posodobi opomnike
 	var posodobiOpomnike = function() {
 		var opomniki = document.querySelectorAll(".opomnik");
